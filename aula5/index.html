@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT</title>
+    <script>
+        /*
+        -javascript é uma linguaem de programação que funcoona no
+         lado cliente e servidos
+        -js nao é java, java é uma linguagem backend de alto nivel, fortemente tipado
+        (case sensetive - document != Document - sensivel a caixa alta)
+        (fortemente tipado - significa por exemplo que uma variavel define por int nao pode mudar para string
+        - usado para criar comportamento no desenvolvimento web, exemplo:
+        galerias dotos, validação de formulario, módal
+        - Pode ser usado com FRAMEWORK
+         */
+    </script>
+</head>
+<body>
+    <script>
+        window.alert('Ola novo mundo')
+        /*comentario para variias 
+         linhas*/
+         //1 linha
+         //window é um objeto
+         //alert é um metado
+        let dia = window.confirm('Como foi o fim de semana?')
+        // let dia é uma definição de variavel
+        window.alert(dia);
+        let cor = window.prompt("Qual sua cor favorita?");
+
+    </script>
+    <p id="curso">INFOWEB</p>
+    <script>
+        document.getElementById('curso').style.color = cor;
+        // documento é um objeto, getElementById é um metodo
+        // style e color sao propriedades
+        //a marcação com id preisa estar antes da chamada do metodo
+        // DOM - modelo de objeto de documento
+        document.write('<p>HOJE TEM ABERTURA!!!!</p>') 
+        document.getElementById('curso').innerHTML = "INFOWEB 2025";
+        //PROPiedade inner HTML - inserir html dentro de uma marcação com id..
+        /*variáveis*/
+
+        let num = 3;
+        let float = 5.8;
+        let primeironome = 'José';
+        let boo = true;
+        // é possivel criar variaveis usando 'let'
+        // let permite mudar o valor da variavek depois
+        //const - nao permite mudar o valor depois.."constante"
+        console.leg(num + float);
+    </script>
+</body>
+</html>

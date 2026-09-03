@@ -7,7 +7,9 @@
 </head>
 <body>
     <h1>ESTRUTURAS DE REPETIÇÃO</h1>
+    <ol id="listadealunos"></ol>
     <p id="texto"></p>
+      
     <script>
         const alunos = ['Carlos', "Alcides", 'Bianca', 'Danúbia']
         // variavel de lista alunos
@@ -19,9 +21,9 @@
             //2o parâmetro: teste logico
             //3o parâmetro: imcremento
             // ++i é igual a i+=1 ou i++
-            console.log(i)
+            console.log(++i)
         }
-        for(let i=0;i<10; i+2){
+        for(let i=0; i<10; i+=2){
             console.log("Incremento de 2 em 2: "+i+"\n ")
             //'/n' é tipo um br para console log
             //'+' concatena a string(valor estatico)com a variavel
@@ -39,7 +41,42 @@
         })
         for(let i=0 ; i<3;i++){
             console.log(alunos[i]);
+            document.getElementById("listadealunos").innerHTML += "<li>"+alunos[i]+"</li>";
+            document.getElementById("listadealunos").innerHTML += `<li>${alunos[i]}</li`;
+            // "+=" pega o valor já impreesso e coloca um novo
+            //2 possibilidades de mostrar o valor
         }
+        let i =0
+        while(i<10){
+            console.log(i);
+            i++; //nao esquecer do imcremento caso contrario trava tudo
+        }
+
     </script>
+    <h2>EXEMPLOS</h2>
+    <p id="resultado"></p>
+    <script>
+        const resultado = document.getElementById('resultado')
+        for(let i = 0; i < 5 ; i++){
+            resultado.innerHTML += `<span style='font-size:${i}rem'>INFOWEB</span><br>`
+        }
+
+
+        
+    </script>
+
+    <button id="mudarbg">MUDAR BG</button>
+
+    <script>
+
+        const mudarbg = document.getElementById("mudarbg")
+        mudarbg.addEventListener('click', function(e){
+            document.body.style.backgroundColor = "blue";
+        })
+    </script>
+    <!--
+        Na linha 61 foi usado um css inline, isto é, dentro da teg html
+        Na linh 74 foi usado um css propriedade do JS, o background-color fica como BackgroundColor
+    -->
 </body>
 </html>

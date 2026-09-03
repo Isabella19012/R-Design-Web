@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de curso</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+        <form action="">
+            <!--  -->
+            <label for="nome">Nome: </label>
+            <input type="text" id="nome" required> <br>
+        <p>Qual sua área? <br>
+            
+            <label>
+                <input type="checkbox" name="area" id="design" value="design">
+                Design
+                <!-- 
+                    - não é necessario colocar o for na label quando o input esta dentro
+                    - o atributo de name representa o grupo
+                    - o atributo de value precisa ser definido e recebe o valor
+                    (é como se fosse o valor digitado em um campo de texto)
+                -->
+            </label><br>
+
+            <label>
+                <input type="checkbox" name="area" id="prog" value="prog">
+                Programação
+            </label> <br>
+            <label>
+                <input type="checkbox" name="area" id="redes" value="redes">
+                Redes
+            </label> <br>
+        </p>
+
+        <p>Qual seu curso: <br>
+            <label >
+                <input type="radio" name="curso" value="inforweb">
+                INFOWEB
+                <!--
+                - assim como no checkbox, radio tbm tem q colocar 'value' e 'name'
+                - 
+                    -->
+            </label><br>
+            <label >
+                <input type="radio" name="curso" value="adm">
+                ADM
+            </label> <br>
+            <label >
+                <input type="radio" name="curso" value="msi">
+                MSI 
+            </label><br>
+        </p>
+        <fieldset>
+            <!-- é um componte opcional e usado para organizar o formulário visualmente -->
+            <legend>Mensagem</legend>
+            <label for="mensagem">
+                Mensagem: <br>
+                <textarea name="msn" id="mensagem" cols="30" rows="10"></textarea>
+                <!-- 
+                 está marcação tem abertura e fechamento pq permite um texto longo
+                 com 'enter's 
+
+                 - os atributos de formação cols e rows são permitidos, mesmo sendo de formatação
+                 - difere do input do tipo text pq aceita texto longo
+                 - o 'value' é o texto dentro da marcação
+
+                 -->
+            </label>
+        </fieldset>
+        <label for="idade">
+            Idade:
+            <input type="number" id="idade" max="10" min="3">
+
+        </label> <br>
+
+        <label for="cidade">
+            Cidade:
+            <input type="text" id="cidade" list="list_cidade">            
+        </label>
+        <!-- 
+            - datalist é um componente novo, similar ao combobox(select)
+            a diferença é q permite que o usuario digite ou selecione uma opção
+
+            - se relaciona com o input com o atributo 'list' 
+            - 
+         -->
+        <datalist id="list_cidade">
+            <option value="Recife">
+            <option value="Natal">
+            <option value="joão Pessoa">
+            <option value="Fortaleza">
+        </datalist> <br>
+        <input type="hidden" id="id-user" value="5487">
+        <input type="submit" value="ENVIAR" >
+
+    </form>
+</body>
+</html>

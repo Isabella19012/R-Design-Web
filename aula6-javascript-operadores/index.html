@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT</title>
+</head>
+<body>
+    <script>
+        // window.prompt('pergunta subjetiva')
+        // window.confirm('pergunta com true ou false')
+        /*operadores aritimeticos*/
+        document.write('Possibilidade de escrever no html -- não é elegante.')
+        // pode-se colocar o conteudo usando getElementyById (por exemplo)
+
+        console.log(54+98); // é uma estrategia escondida para fazer testes -
+        //deve ser acessado usando a aba 'console' do inspecionar do navegador
+        console.log(87-98);
+        console.log(2*89);
+        console.log(63/7);
+        let a = 8;
+        console.log('comando: a++') // Imcrementar a+=1
+        console.log(a++); // imcrementa DEPOIS de escrever
+        console.log('valor: a')
+        console.log(a)
+        console.log('comando: ++a')/*posso usar aspas simples dentro de duplas e vice-versa*/
+        console.log(++a) // imcrementa ANTES de escrever
+        console.log(a);
+
+        console.log(--a);
+        console.log(a--);
+        /*operadores relacionais*/
+        console.log(4==6);
+        console.log(4==9);
+        console.log(9>=7);
+        console.log(6<6);
+        console.log(4==7 && 8==9); //ambos verdadeiras - retura V
+        console.log(4==8 || 0==0); //se alguma verdadeira - retorna v
+        
+        console.log(8=="8");// se idênticos, inclusive no tipo
+        console.log(8=="8");
+    </script>
+    <h2>ESTRUTURA</h2>
+    <script>
+        let lanche = "bolo";
+        if(lanche == 'bolo'){
+            console.log('OPA! bolo!')
+        }else{
+            console.log('Hoje não é bolo')
+        }
+        /*IF's ANINHADO*/
+        // se so ouver uma linha nao precisa das chaves
+        if(lanche == 'cuscuz'){
+            console.log('CUSCUZ HJ!')
+        }else
+            if(lanche ==  'bolacha'){
+                console.log('bolacha :/')                
+            }
+        /*SWITCH*/
+        let opcao = 2;
+        switch(opcao){
+            case 1: console.log('O valor é 1'); break;
+            case 2: console.log('O valor é 2'); break;
+            case 3: console.log('O valor é 3'); break;
+            default: console.log("DEFAULT")
+        }
+        let esporte = 'handebol';
+        switch(esporte){
+            case 'basqute': console.log('O valor é basqute'); break;
+            //break é para parar o switch, ele não irá analisar as outras opções
+            //caso hajam várias linhas, deve ter chaves
+            case 'futebol': console.log('O valor é futebol'); break;
+            case 'handebol': console.log('O valor é handebol'); break;
+            default: console.log("DEFAULT")
+        }
+    </script>
+    <button id="imcrementar">IMCREMENTAR</button> <br>
+    <!-- a marcação é similar ao input do tipo submit, mas submit é com a marcação de formatação
+     o button é mais para inetatividade com javascript -->
+    <span id="resultado">0</span>
+    <!-- span é uma marcação SEM VALOR SEMANTICO, mas do tipo inline -->
+    <script>
+        const imcrementar = document.getElementById('imcrementar');
+        //CONST É uma possibilidade de criação de variável não irá mudar o valor
+        imcrementar.addEventListener('click', function(e){
+            // evento clique é chamado ao clicar no botão  'imcrementar'
+            //alert('CLICOU')
+            let resultado = document.getElementById('resultado')
+            resultado.innerHTML = parseInt(resultado.textContent) +1 // innerHTML é um métado para inserir html ou texto
+            //paseInt converte para inteiro
+        })
+    </script>
+    <br>
+    <button id="decrementar">DECREMENTAR</button>
+    <script>
+        const decrementar = document.getElementById('decrementar')
+        decrementar.addEventListener("click", function(e){
+            let resultado = document.getElementById('resultado')
+            resultado.innerHTML = parseInt(resultado.textContent) -1
+
+        })
+    </script>
+</body>
+</html>

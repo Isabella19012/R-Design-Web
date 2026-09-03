@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Cadastro de estágio</title>
+</head>
+<body>
+    <h1>Diretoria de extensão - DIREX</h1>
+    <h2>Cadastro prara estágio</h2>
+    <!-- action recebe o arquivo que vai tratar esses dados -->
+    <form action="resposta.html" method="get"> 
+        <!-- metado get os dados ficam na UML / metado post fica escondido -->
+        <label for="nome">Nome: </label>
+        <!-- a marcação de label representa o rotulo do campo do formulario
+         é importante para a acessibiidade! -->
+        <input type="text" id="nome" name="nome" value="Isa" placeholder="Digite seu nome aqui.."> <br>
+        <!-- a marcação de label precisa ficar relacionada com o componente de entrada de dados, 
+         o componente ,por exemplo input, que pode ficar dentro da 
+         marcação ou relacionada com o atributo for da label e id do 
+         componente de entrada de dados(input) -->
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu email aqui.."><br>
+        <!-- value: o atributo value é usado para 'editar dados' de um formulário -->
+         <label for="nascimento">Data de Nascimento</label>
+         <input type="date" id="nascimento" >
+         <br>
+        <!-- placeholder é um atributo de rótulo
+            disable é um comando para desativar -->
+        <label for="curriculo">Currículo</label>
+        <input type="file" id="curriculo" required> <br>
+        <!-- 'required' é um comando que torna o campo obrigatorio -->
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" maxlength="7" minlength="3"> <br>
+        <!-- max e min definem limite maximo e minimo de caracteres -->
+
+        <label for="uf">Estado:</label>
+        <!-- select é chamado de combobox 
+            e é usado para grupo de itens muito similares...
+            o comando 'multiple' permite selecionar vários
+            + esse comando(select) deixa o item ativo-->
+        <select name="uf" id="uf">
+            <option value="rn">Rio grande do norte</option>
+            <option value="pe">Pernabuco</option>
+            <option value="pb">Paraíba</option>
+        </select> <br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

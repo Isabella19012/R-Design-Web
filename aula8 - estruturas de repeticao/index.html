@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESTRUTURA DE REPETIÇÃO</title>
+</head>
+<body>
+    <h1>ESTRUTURAS DE REPETIÇÃO</h1>
+    <p id="texto"></p>
+    <script>
+        const alunos = ['Carlos', "Alcides", 'Bianca', 'Danúbia']
+        // variavel de lista alunos
+        document.getElementById("texto").innerHTML = alunos.sort().join(' <> ')
+        // imprimir chamand 2 métodos para lista sort que é para ordenar e join (insere um caractere entre os elementos)
+        for(let i=0 ; i<10 ; i++){
+            // A ESTRUTURA DE REPETIÇÃO 'FOR'recebe 3 parametros
+            //1o parametro: declaração/inicio
+            //2o parâmetro: teste logico
+            //3o parâmetro: imcremento
+            // ++i é igual a i+=1 ou i++
+            console.log(i)
+        }
+        for(let i=0;i<10; i+2){
+            console.log("Incremento de 2 em 2: "+i+"\n ")
+            //'/n' é tipo um br para console log
+            //'+' concatena a string(valor estatico)com a variavel
+        }
+        for(let i=10 ; i>0 ; i--){
+            console.log('Decremento: '+i)
+        }
+        // forEach
+        alunos.forEach(item => {
+            console.log(item)
+            // forEach é uma opção prática para imprimr os valores de uma lista
+            // não é necessario imcrementar e nem fazer teste lógico com comprimento da lista
+            //'item' é uma variavel criada inteiramente para representar cada item da lista
+
+        })
+        for(let i=0 ; i<3;i++){
+            console.log(alunos[i]);
+        }
+    </script>
+</body>
+</html>

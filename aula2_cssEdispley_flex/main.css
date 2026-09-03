@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2rem; /*rem é root + 'em', %*/
+}
+header, footer{ /*, formatar ambos*/
+    background-color: rgb(248, 46, 46);
+    text-align: center;
+    padding: 2rem;
+    color: rgb(255, 255, 255);
+}
+nav ol{
+    /*displey flex é no ol pq é o "pai" dos elementos, isto é, o CONTAINER.*/
+    display: flex;
+    justify-content: center;
+}
+header a{
+    color: white;
+    text-decoration: none;
+
+
+}
+nav a{
+    text-decoration: none;
+    background-color: rgb(255, 166, 166);
+    display: inline-block; /*a marcação de ancora tem o comportamento 'inline', isto é, o padding e o width nao funcionam corretamente. Entao é necessario colocar o display: 'inlane-block', que permitira um comprtamento hibrido, isto é, inline(um lado do outro) e bloco(permite width e padding)*.
+    A estrategia de colocar essa formatação no ancora é para levar ao usuario usabilidade, toda a area do botão clicável.*/
+    padding: 1rem;
+    width: 20rem;
+    margin: 1rem;
+}
+nav li{
+    list-style-type: none;
+}
+nav li a:hover{
+    background-color: blue;
+    color: red;
+}
+main{
+    max-width: 70rem ;
+    margin: 0 auto;/*coloca o bloco no centro, auto de automatico*/
+    /* para colocar um bloco no centro, pode usar width com magin ou display flex com justify-content */
+    display: flex; /*flex no mais pq as sections ficarão lado a lado*/
+    flex-wrap: wrap;
+}
+section{
+    max-width: 30rem; /*dica: fechar o vvalor para encaixar 2 cards por linha, udando o inspecionar do navegador*/
+    border: 1px solid black; /*espessura, estilo e cor - separados por espaço, sem virgula.*/
+    padding: 1rem;
+    margin: 1rem;
+}

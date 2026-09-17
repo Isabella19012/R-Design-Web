@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova</title>
+</head>
+<body>
+    <style>
+        button{
+            font-size: 2rem;
+            color:rgb(0, 0, 0);
+            background-color: beige;
+        }
+        span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin: 2px;
+            border: blue 2px solid;
+        }
+
+    </style>
+    <button id="bo">Botão</button>
+    <p id="paragrafo"></p>
+
+    <script>
+        const cores = []
+        let botao = document.getElementById('bo')
+        botao.addEventListener('click', function(e){
+            let red =  Math.floor( Math.random()*255)
+            let green = Math.floor( Math.random()*255)
+            let blue = Math.floor( Math.random()*255)
+
+            document.body.style.backgroundColor = "rgb("+red+","+green+","+blue+")"
+            // document.getElementById("paragrafo").innerHTML = cores.toString()
+            // cores.push("rgb("+red+","+green+","+blue+")")
+                let red2 =  Math.floor( Math.random()*255)
+                let green2 = Math.floor( Math.random()*255)
+                let blue2 = Math.floor( Math.random()*255)
+                const quadrados = []
+                for(let i = 0; i<=20 ;++i){
+                    document.getElementById('paragrafo').innerHTML = "<span style=background-color: rbg("+red2+","+green2+","+blue2+");></span>"
+
+            }
+
+            })
+
+
+</script>
+
+
+</body>
+</html>

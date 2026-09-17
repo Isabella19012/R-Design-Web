@@ -17,6 +17,7 @@
         frutas[0] = "Mamão";
         frutas[1] = 'Goiaba';
         const lanche = new Array('Biscoito', "Bolo", "Macarrão");
+        console.log(lanche)
     </script>
     <p id="resultado"></p>
 
@@ -54,11 +55,13 @@
         //floor(5.7) - arredonda para baixo
         resultado2.innerHTML = "Pra cima: "+Math.ceil(5.4);
         resultado2.innerHTML = "Pra baixo: "+Math.floor(5.7);
-
+        // retorna 1 numero minimo e outro o maximo
         resultado2.innerHTML = Math.min(4,7,8,5,6,3,2)
         resultado2.innerHTML = Math.max(4,7,8,5,6,3,2)
-        //numero randômico
-        resultado2.innerHTML = Math.random();
+
+        //numero randômico entre 0 e 1
+        console.log(resultado2.innerHTML = Math.random())
+
         //numero aleatorio entre 0 e 10
         resultado2.innerHTML = Math.floor(Math.random()*10)
     </script>
@@ -76,7 +79,7 @@
         gerar.addEventListener('click', function (e){
             //criar uma lista com cores e colocar o nome
             //com uma cor da lista de forma aleatoria
-            let nome = document.querySelector("#nome").value;
+            let nome = document.querySelector("#nome").value;//value diz pra pegar so o texto no campo do input
             document.querySelector("#textoformatado").style.color = cores[Math.floor(Math.random()*10)]
             document.querySelector('#textoformatado').innerHTML = nome;
 

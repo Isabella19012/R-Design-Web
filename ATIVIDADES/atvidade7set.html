@@ -4,8 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade</title>
+    <style>
+        *{
+            padding: 0.5rem;
+        }
+    </style>
 </head>
 <body>
-    
+    <p id="dez"></p>
+    <script>
+        const lista = []
+        for(let i= -10;i<=10;i++){
+
+            lista.push(i)            
+        }
+        document.getElementById("dez").innerHTML = lista.toString()
+
+    </script>
+    <p id="color7"></p>
+    <script>
+        const cores = ["blue", "red", "purple", "yellow", "cyan", "brown", "orange"]
+        for(let i = 0; i<cores.length; i++){
+            document.getElementById("color7").innerHTML +=  "<span style='color:" + cores[i] + "'>" + cores[i] + "</span>";
+        }
+    </script>
+    <p id="td"></p>
+    <script>
+        for(let i=1;i<=5; i++){
+            document.getElementById("td").innerHTML += '<span style="font-size: '+i+'rem;">'+i+'</span>'
+
+        }
+    </script> 
+    <form>
+        <label for="nome">NOME:</label>
+        <input type="text" id="nome">
+        <button id="botao">ENVIAR</button>
+    </form>
+
+    <p id="p"></p>
+
+    <script>
+    document.getElementById("botao").addEventListener("click", function (e) {
+        e.preventDefault();
+
+        let nome = document.getElementById("nome").value;
+        document.getElementById("p").innerHTML = "";
+
+        for (let i = 1; i <= 5; i++) {
+            document.getElementById("p").innerHTML +=
+                '<span style="font-size:' + i + 'rem;">' + nome + '</span>';
+        }
+    });
+    </script>
+    <button id="body">AUMENTAR</button>
+    <button id="body_d">DIMINUIR</button>
+    <script>
+        document.getElementById("body").addEventListener("click", function(e){
+            document.body.style.fontSize = "2rem"
+        })
+        document.getElementById("body_d").addEventListener("click", function(e){
+            document.body.style.fontSize = "0.5rem"
+        })
+    </script>
 </body>
 </html>

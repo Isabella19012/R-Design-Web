@@ -17,7 +17,7 @@
             width: 20px;
             height: 20px;
             margin: 2px;
-            border: blue 2px solid;
+            border: rgb(0, 0, 0) 2px solid;
         }
 
     </style>
@@ -35,13 +35,13 @@
             document.body.style.backgroundColor = "rgb("+red+","+green+","+blue+")"
             // document.getElementById("paragrafo").innerHTML = cores.toString()
             // cores.push("rgb("+red+","+green+","+blue+")")
-                let red2 =  Math.floor( Math.random()*255)
-                let green2 = Math.floor( Math.random()*255)
-                let blue2 = Math.floor( Math.random()*255)
-                const quadrados = []
-                for(let i = 0; i<=20 ;++i){
-                    document.getElementById('paragrafo').innerHTML = "<span style=background-color: rbg("+red2+","+green2+","+blue2+");></span>"
 
+                for(let i = 0; i<=20 ;++i){
+                    let red2 =  Math.floor( Math.random()*255)
+                    let green2 = Math.floor( Math.random()*255)
+                    let blue2 = Math.floor( Math.random()*255)
+                    document.getElementById('paragrafo').innerHTML +=
+                    `<span style="background-color: rgb(${red2},${green2},${blue2});"></span>`;
             }
 
             })

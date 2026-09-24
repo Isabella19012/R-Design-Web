@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+</head>
+<body>
+
+    <div id="app">
+        <app-header></app-header>
+        <p>OI</p>
+        <p>{{mensagem}}</p>
+        <p>{{lanches[2]}}</p>
+        <ol>
+            <li v-for="(lanche, index) in lanches" :key="index">{{lanche}}</li>
+            <!-- diretiva de v-for é uma estrutura de repetição 
+                lanches é a varivel de controle do for que representa o item atual do laço
+                index é a variavel de controle do for que representa o inicio 0 
+            -->
+        </ol>
+        <!--  a marcação ´recisa ter abertura e fevjamento e ficar dentro da tag com id="app" -->
+        <app-footer></app-footer>
+    </div>
+
+        <!--AQui É O VUE-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Meu código vem DEPOIS da chamada do vue! -->
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <!-- o Header é um componente e PRECISA fica depois do Vue e antes do 'script.js' porque erá chamar a variável -->
+    <script src="script.js"></script>
+    <!-- 
+    Para criação do componente 4 passos:
+    passo 1: criar o arquivo e definir a varivel
+    passo 2: incluir o arquivo no html <script...
+    passo 3: inserir o componente na aplicação> app.component(...,...)
+    passo 4:colocar a marcação no html dentro da marcação com id 'app'
+    -->
+</body>
+</html>

@@ -19,7 +19,8 @@
             </fieldset>
             
             <ol>
-                <li class="lanche" v-for="lanche in lanches">
+                <li class="lanche" v-for="lanche in lanches"
+                    @click="excluirlanche(lanche)">
                     {{lanche.descricao}}
                 </li>
             </ol>

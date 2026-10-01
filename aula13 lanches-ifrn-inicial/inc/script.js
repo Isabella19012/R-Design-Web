@@ -1,9 +1,16 @@
-const {createApp, ref} = Vue
-
+const {createApp, ref, watch} = Vue
+// watch -> // o métado watch foi acionado para ser usado com localstorage
 const lancheifrn = createApp({
     setup(){
+        const frutasifrnLS=localStorage.getItem('frutas');
+        const lacnheifrnLS=localStorage.getItem('lanches');
+        //criou uma variável que representa a TABELA do banco de dados do navegador da nossa aplicação
 
-            const lanches = ref( [
+
+            const lanches = ref( 
+            lacnheifrnLS ? JSON.parse(lacnheifrnLS):
+            //condição ? se SIM : se NAO    
+            [
             // lista de objetos
             {
                 descricao : 'Bolo',
@@ -21,6 +28,16 @@ const lancheifrn = createApp({
                 imagem : 'tapioca.jpg'
             }
         ])
+
+        watch(lanches, () => {
+            localStorage.setItem('lanches', JSON.stringify(lanches.value))
+        }, {deep: true, immediate: true})
+        //função de watch - observa a lista: qualquer alteração é feita também lá no localstorage
+        // stringify essse método é usado porque o localstorage recebem string, ele converte objeto para string
+        //deep ; true - profundo... significa que observa até os valores das propriedades do objeto
+        // se houver alteração no valor, por exemplo do 'ativo', este é atualizado lo ls(localstorage)
+        //immediate: true - coloca os valores, objetos, na tabela do ls imediatamente ao abrir a aplicação
+
         function mudarAtivo(item){
             lanches.value.forEach(lanche => {
                 lanche.ativo = false
@@ -41,6 +58,9 @@ const lancheifrn = createApp({
             )
             
         }
+
+        function excluirlanche(){
+                lanches.value.pop()}
         
        const novoLancheInput = ref(''); 
 
@@ -49,10 +69,38 @@ const lancheifrn = createApp({
             lanches,
             mudarAtivo,
             novoLancheInput,
-            novolanche
-        }
+            novolanche,
+            excluirlanche
+        } 
     }
 })
 lancheifrn.component('app-header', AppHeader); //CHAMAR O ARQUIVO JS DO HEADER
 lancheifrn.component('app-footer', AppFooter); //CHAMAR O ARQUIVO JS DO HEADER
 lancheifrn.mount('#app');
+
+/*
+PARA DEFINIR O LOCALSTORAGE:
+LOCAL STORAGE é um banco de dados que fica dentro do navegador
+
+passo 1 - colocar o watch na criação do Vue
+passo 2 - definir a variável de tabela do banco de dados - o nome da tabela criada "lanche"
+passo 3 - condicional para a criação da tabela
+passo 4 - observar (watch - assistir)
+    atualiza a lista na tabela do local storage assim que a mesma é alterada
+    isto é, mudou a propriedade 'ativo', estão observa e altera tabmbém lá na tabela,
+     ela adicionou um novo objeto, e altera na tabela do local storage.
+*/
+
+
+/*
+ATIVIDADE:
+
+- criar uma lista para frutas
+- adicionar frutas no adm
+- excluir lanches - usar a função pop()
+- excluir frutas
+- editar lanche
+    - vou: colocar descrição lã no formulário
+    - reaproveitar a função novolanche
+
+*/

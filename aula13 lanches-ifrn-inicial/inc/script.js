@@ -6,6 +6,26 @@ const lancheifrn = createApp({
         const lacnheifrnLS=localStorage.getItem('lanches');
         //criou uma variável que representa a TABELA do banco de dados do navegador da nossa aplicação
 
+            const frutas = ref(
+
+                frutasifrnLS ? JSON.parse(frutasifrnLS):
+                [       
+                    {
+                        descricao : 'Abacaxi',
+                        ativo:true,
+                        imagem :'bolo.jpg'
+                    },
+                    {
+                        descricao : "Melância",
+                        ativo : false,
+                        imagem : 'bolacha.jpg'
+                    },
+                    {
+                        descricao : "Manga",
+                        ativo : false,
+                        imagem : 'tapioca.jpg'
+                    }
+                ])
 
             const lanches = ref( 
             lacnheifrnLS ? JSON.parse(lacnheifrnLS):
@@ -32,6 +52,10 @@ const lancheifrn = createApp({
         watch(lanches, () => {
             localStorage.setItem('lanches', JSON.stringify(lanches.value))
         }, {deep: true, immediate: true})
+
+        watch(frutas, () => {
+            localStorage.setItem('frutas', JSON.stringify(frutas.value))
+        }, {deep: true, immediate: true})
         //função de watch - observa a lista: qualquer alteração é feita também lá no localstorage
         // stringify essse método é usado porque o localstorage recebem string, ele converte objeto para string
         //deep ; true - profundo... significa que observa até os valores das propriedades do objeto
@@ -53,16 +77,23 @@ const lancheifrn = createApp({
                 descricao: novoLancheInput.value,
                 ativo:false,
                 imagem : 'bolo.jpg'                
-            }
-
-            )
-            
+            })
         }
+        function novaFruta(){
+            frutas.value.push({
+                descricao: novafrutaInput.value,
+                ativo:false,
+                imagem : 'bolo.jpg'                
+            })}
 
-        function excluirlanche(){
-                lanches.value.pop()}
+        function excluirlanche(index){
+                lanches.value.splice(index, 1)}
+
+        function excluirFruta(index){
+                frutas.value.splice(index, 1)}
         
        const novoLancheInput = ref(''); 
+       const novafrutaInput = ref(''); 
 
         return{
             mensagem: ref("Olá, Mundo!!"), //é o getElementById            
@@ -70,7 +101,11 @@ const lancheifrn = createApp({
             mudarAtivo,
             novoLancheInput,
             novolanche,
-            excluirlanche
+            excluirlanche,
+            novafrutaInput,
+            excluirFruta,
+            frutas,
+            novaFruta
         } 
     }
 })

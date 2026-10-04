@@ -10,21 +10,46 @@
     <div id="app">
         <app-header></app-header>
         <main>
-            <h2>DASHBOARD ADMINISTRATIVO </h2>
+            <h2>DASHBOARD ADMINISTRATIVO</h2>
+            <hr>
+            <h2>LANCHES</h2>
 
-            <fieldset class="adicionar">
-                <legend>Inserir lanche</legend>
-                <input type="text" placeholder="Novo lanche..." v-model="novoLancheInput">
-                <button @click="novolanche()" class="add">INSERIR</button>
-            </fieldset>
-            
-            <ol>
-                <li class="lanche" v-for="lanche in lanches"
-                    @click="excluirlanche(lanche)">
-                    {{lanche.descricao}}
-                </li>
-            </ol>
 
+            <div class="ft">
+                <fieldset class="adicionar">
+                    <legend>Inserir lanche</legend>
+                    <input type="text" placeholder="Novo lanche..." v-model="novoLancheInput">
+                    <button @click="novolanche()" class="add">INSERIR</button>
+                </fieldset>
+                
+                <ol>
+                    <li class="lanche" v-for="(lanche, index) in lanches"
+                        @click="excluirlanche(index)">
+                        {{lanche.descricao}}
+
+                        <img class="excluir" src="https://cdn-icons-png.flaticon.com/512/4437/4437007.png" alt="">
+                    </li>
+                </ol>                
+            </div>
+            <hr>
+
+            <h2>FRUTAS</h2>
+            <div class="ft" >
+                    <fieldset class="adicionar">
+                    <legend>Inserir fruta</legend>
+                    <input type="text" placeholder="Nova fruta..." v-model="novafrutaInput">
+                    <button @click="novaFruta()" class="add">INSERIR</button>
+                </fieldset>
+                
+                <ol>
+                    <li class="lanche" v-for="(fruta, index) in frutas"
+                        @click="excluirFruta(index)">
+                        {{fruta.descricao}}
+
+                        <img class="excluir" src="https://cdn-icons-png.flaticon.com/512/4437/4437007.png" alt="">
+                    </li>
+                </ol>   
+            </div>
         </main>
         
         <app-footer></app-footer>

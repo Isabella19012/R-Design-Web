@@ -23,10 +23,13 @@ onMounted(buscarPersonagens);
 
 <template>
   <h2>Rick and Morty</h2>
+  
   <div>
     <CardPadrao v-for="item in personagens"
       :key="item.id"
-      :name="item.name"
+      :titulo="item.name"
+      :subtitulo="item.species"
+      :imagem="item.image"
       />
   </div>
 
